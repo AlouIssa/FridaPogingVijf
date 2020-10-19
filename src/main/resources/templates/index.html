@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="nl"  xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments::head(title='Frituur Frida')"></head>
+<body>
+<nav th:replace="fragments::menu"></nav>
+    <dl>
+        <h1>Frituur Frida </h1><div th:if="${reedsBezocht}">Welkom Terug</div>
+        <h2>Vandaag zijn wij <span th:text="${openGesloten}"></span> </h2>
+    </dl>
+
+    <dl th:object="${adres}">
+        <dt>Adres</dt>
+        <dd th:text="|*{straat} *{huisnr},  *{gemeente.postcode} *{gemeente.naam}|"></dd>
+    </dl>
+
+
+
+
+
+</body>
+</html>

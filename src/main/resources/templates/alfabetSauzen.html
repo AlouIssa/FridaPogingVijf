@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="nl"  xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments::head(title='Alfabet Sauzen')"></head>
+<body>
+<nav th:replace="fragments::menu"></nav>
+
+<span th:each="letter:${alfabet}">
+    <a th:href="@{/alfabetSauzen/{letter} (letter=${letter})}" th:text="${letter}"></a>
+</span>
+
+<ul th:if="${gevonden}" >
+    <li th:each="saus:${gevonden}" th:object="${saus}" th:text="*{naam}"></li>
+</ul>
+
+</body>
+</html>
